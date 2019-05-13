@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Forms</title>
+    <meta name="Autor" content="Daniel Will" />
+    <meta charset="utf-8" />
+    <style>
+        input {
+            display: inline-block;
+            padding: 5px;
+        }
+
+        input:focus {
+            border: 2px solid black;
+        }
+
+        legend {
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        #form1 {
+            background-color: aliceblue;
+            box-sizing: content-box;
+            padding: 20px;
+        }
+
+        #form1 label {
+            padding-top: 8px;
+            width: 100px;
+            text-transform: capitalize;
+            display: inline-block;
+        }
+
+        fieldset {
+            margin-bottom: 1em;
+            color: royalblue;
+            width: 20%;
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
+    <script>
+        function absenden() {
+            if (document.formular1.Vorname.value != "" && document.formular1.Nachname.value != "") {
+                alert("Hallo " + document.formular1.Vorname.value + " " + document.formular1.Nachname.value);
+            } else {
+                alert("Bitte beide Kästchen ausfüllen ...")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <form method="POST" id="form1" name="formular1">
+            <fieldset>
+                <legend>Anmelde-Formular</legend>
+
+                <label for="Vorname">
+                    Vorname
+                    <input type="text" name="Vorname" placeholder="Max">
+                </label>
+                <br>
+                <label for="Nachname">
+                    Nachname
+                    <input type="text" name="Nachname" placeholder="Mustermann">
+                </label> <br> <br>
+                <input type="button" value="Absenden" onclick="absenden()"></button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+
+</html>
